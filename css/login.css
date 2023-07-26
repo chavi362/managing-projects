@@ -1,0 +1,86 @@
+
+
+header {
+	background-color: #333;
+	color: #fff;
+	padding: 20px;
+	margin-top: 0px;
+}
+
+.left-side-component {
+	flex: 1;
+	margin-top: 55px;
+	margin-right: 0px;
+	margin-left: 25%;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+}
+
+.form-group {
+	margin-bottom: 20px;
+}
+
+label {
+	margin-bottom: 10px;
+}
+.url{
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+	font-size: 1.4em;
+	height: 20px;
+	color:black;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	width: 320px;
+}
+#submit-regiser, #login-submit
+{
+	width: 340px;
+	background-color: rgb(255, 207, 77);
+	height: 40px;
+	border: none;
+}
+button {
+	background-color: #333;
+	color: #fff;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+
+.right-side-component {
+	position: relative;
+	flex: 1;
+	margin-right: 0px;
+}
+
+.right-side-component img {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 74%;
+	margin-right: 0px;
+	object-fit: cover;
+}
+
+@media (max-width: 768px) {
+	main {
+		flex-direction: column;
+	}
+	.right-side-component img {
+		width: 100%;
+	}
+}

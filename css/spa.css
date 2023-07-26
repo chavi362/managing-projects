@@ -1,0 +1,24 @@
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+}
+
+main {
+    padding: 10px;
+    display: flex;
+    min-height: 76vh;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url("../images/5437842.jpg");
+    font-family: 'latin-ext', cursive;
+    background-position: center;
+}
+.hidden
+{
+  display: none;
+}

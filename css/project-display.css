@@ -1,0 +1,186 @@
+.container {
+  margin: 20px auto;
+  max-width: 1300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column-left {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  display: inline-block;
+}
+
+.column-right {
+  float: right;
+  width: 53%;
+  /* padding: 10px; */
+  margin-top: 10px;
+  display: inline-block;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.task {
+  border: 2px solid rgb(248, 118, 136);
+  border-radius: 4.5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width:400px;
+  margin-left: 30%;
+  font-family: 'Pacifico', cursive;
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.task-header input,
+.task-header select {
+  margin-right: 10px;
+  font-family: 'latin-ext', cursive;
+}
+
+.task-label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.task-comments {
+  font-family: 'latin-ext', cursive;
+  height: 60px;
+  width: 95%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 8px;
+  width:260px;
+}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+  width:510px;
+}
+th:nth-child(3),th:nth-child(4),th:nth-child(5) {
+  width: 1000px !important;
+}
+th:nth-child(5)
+{
+  width: 2000px;
+}
+.remove-task-button,
+.edit-task-button{
+  margin-top: 10px;
+  background-color: rgb(248, 118, 136);
+  color: white;
+  border: none;
+  padding: 7px;
+  margin-left: 1px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px; 
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: 'latin-ext', cursive;
+}
+.remove-task-button
+{
+  float: left;
+}
+.edit-task-button{
+  float: right;
+}
+.add-button {
+  font-family: 'latin-ext', cursive;
+  margin-top: 10px;
+  background-color: rgb(14, 191, 197);
+  color: white;
+  border: none;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-button:hover {
+  background-color: rgb(136, 246, 250);
+  color: rgb(87, 87, 87);
+}
+
+.remove-task-button:hover {
+  background-color: #ff4f6c;
+}
+
+.add-task-button:active,
+.remove-task-button:active {
+  background-color: #ff5f94;
+  box-shadow: 0 8px #666;
+  transform: translateY(4px);
+}
+
+.add-task-button:focus,
+.remove-task-button:focus {
+  outline: none;
+}
+
+.add-task-button:disabled,
+.remove-task-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+.overdue-task
+{
+  background-color: red;
+}
+
+.create-project-button {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.create-project-button a {
+	background-color: rgb(14, 191, 197);
+	color: #fff;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-decoration: none;
+}
+
+.create-project-button a:hover {
+	background-color: rgb(136, 246, 250);
+	color: rgb(87, 87, 87);
+}

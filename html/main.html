@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Project Hub</title>
+  <link rel="stylesheet" type="text/css" href="../css/spa.css">
+  <script src="../js/DataBase.js"></script>
+<script src="../js/server.js"></script>
+  <script src="../js/network.js"></script>
+  <script src="../js/task.js"></script>
+  <script src="../js/XMLHttpRequest.js"></script>
+  <script src="../js/teamMember.js"></script>
+  <script src="../js/project.js"></script>
+</head>
+
+<body>
+  <div id="main-content"></div>
+  <template id="login">
+    <header>
+      <h1>login to your account</h1>
+      <link rel="stylesheet" type="text/css" href="../css/login.css">
+    </header>
+    <main>
+      <div class="left-side-component">
+        <a  href="#registration" class="url">don't have already an account? register now!</a>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="password" name="password">
+          </div>
+          <input type="submit" id="login-submit" value="Submit">
+        </form>
+      </div>
+      <div class="right-side-component">
+        <img src="../images/regiater-picture.jpg" alt="your-image-alt-text">
+      </div>
+    </main>
+    <script src="../js/login.js"></script>
+  </template>
+  <template id="registration">
+    <header>
+      <h1>Registration</h1>
+      <link rel="stylesheet" type="text/css" href="../css/login.css">
+    </header>
+    <main>
+      <div class="left-side-component">
+        <a href="#login" class="url"> have already an account? login here!</a>
+        <form id="registration-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <br>
+            <input type="text" id="name" name="name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <br>
+            <input type="email" id="email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="password" name="password">
+          </div>
+          <div class="form-group">
+            <label for="verify-code">Verification Code:</label>
+            <br>
+            <input type="text" id="verify-code" name="verify-code">
+          </div>
+          <button type="submit" id="submit-regiser">Register</button>
+      </div>
+      </form>
+      </div>
+      <div class="right-side-component">
+        <img src="../images/regiater-picture.jpg" alt="your-image-alt-text">
+      </div>
+    </main>
+    <script src="../js/registration.js"></script>
+  </template>
+  <template id="get-started">
+    <header>
+      <h1>get started</h1>
+      <link rel="stylesheet" type="text/css" href="../css/get-started.css">
+    </header>
+    <main>
+      <div class="container">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Progress</th>
+              <th>Status</th>
+              <th>Deadline</th>
+              <th>enter</th>
+              <th>remove</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+        <div class="create-project-button">
+          <a href="#create-project">Create New Project</a>
+        </div>
+      </div>
+    </main>
+    <script src="../js/get-started.js"></script>
+  </template>
+  <template id="create-project">
+    <header>
+      <link rel="stylesheet" type="text/css" href="../css/create-new-project.css">
+    </header>
+    <div class="container">
+      <h1>Create New Project</h1>
+      <div id="create-project-error" class="error-message"></div>
+      <form id="create-project-form">
+        <div class="row">
+          <div class="column-left">
+            <label for="project-name">Project Name:</label>
+            <input type="text" id="project-name" name="project-name" required><br><br>
+            <label for="project-description">Project Description:</label>
+            <textarea id="project-description" rows="3"></textarea><br><br>
+            <label for="project-deadline">Deadline:</label>
+            <input type="date" id="project-deadline" required><br><br>
+            <h2>Tasks:</h2>
+            <div id="tasks-container">
+              <div class="task">
+                <div class="task-header">
+                  <input type="text" class="task-name" id="task-name" placeholder="Task Name">
+                  <label for="task-priority">Priority:</label>
+                  <select class="task-priority" id="task-priority">
+                    <option value="High">High</option>
+                    <option value="Normal">Normal</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+                <label for="task-deadline">Deadline:</label>
+                <input type="date" class="task-deadline" id="task-deadline"><br><br>
+                <label for="task-comments">Comments:</label>
+                <textarea class="task-comments" rows="3" id="task-comments"></textarea><br><br>
+              </div>
+            </div>
+            <button type="button" class="add-task-button" id="add-task">Add Another Task</button>
+          </div>
+          <div class="column-right">
+            <h2>Team Members:</h2>
+            <div id="team-members-container">
+              <div class="input-wrapper">
+                <input class="chosen-value" type="text" value="" placeholder="Type to filter">
+                <button type="button" class="add-button">Add</button>
+              </div>
+              <div class="select-wrapper">
+                <div class="select-header">
+                  <div class="header-item">Email</div>
+                  <div class="header-item">Type</div>
+                </div>
+                <ul class="selected-list" id="selected-list">
+                </ul>
+              </div>
+              <div class="select-wrapper">
+                <div class="select-header">
+                  <div class="header-item">Email</div>
+                </div>
+                <ul class="value-list">
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <input type="submit" value="Create Project" id="create-project-btn">
+      </form>
+    </div>
+    <script src="../js/add-teams-tasks.js"></script>
+    <script src="../js/create-new-project.js"></script>
+  </template>
+  <template id="project-display">
+    <header>
+      <link rel="stylesheet" type="text/css" href="../css/project-display.css">
+    </header>
+    <main>
+      <div class="container">
+        <h1>Project Details</h1>
+        <div id="add-task-container" class="hidden">
+          <div class="task">
+            <div class="task-header">
+              <input type="text" class="task-name" id="add-task-name" placeholder="Task Name">
+              <label for="add-task-priority">Priority:</label>
+              <select class="task-priority" id="add-task-priority">
+                <option value="High">High</option>
+                <option value="Normal">Normal</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <label for="add-task-deadline">Deadline:</label>
+            <input type="date" class="task-deadline" id="add-task-deadline"><br><br>
+            <label for="add-task-comments">Comments:</label>
+            <textarea class="task-comments" rows="3" id="add-task-comments"></textarea><br><br>
+            <button id="submit-add-task-button">Add Task</button>
+            <button id="cancel-add-task-button">Cancel</button>
+          </div>
+        </div>
+        <div id="update-task-container" class="hidden">
+          <div class="task">
+            <div class="task-header">
+              <input type="text" class="task-name" id="update-task-name" placeholder="Task Name">
+              <label for="update-task-priority">Priority:</label>
+              <select class="task-priority" id="update-task-priority">
+                <option value="High">High</option>
+                <option value="Normal">Normal</option>
+                <option value="Low">Low</option>
+              </select>
+            </div>
+            <label for="update-task-deadline">Deadline:</label>
+            <input type="date" class="task-deadline" id="update-task-deadline"><label
+              for="update-task-status">Status:</label>
+            <select class="task-priority" id="update-task-status">
+              <option value="not started">not started</option>
+              <option value="stuck">stuck</option>
+              <option value="in progress">in progress</option>
+              <option value="completed">completed</option>
+            </select><br><br>
+            <label for="update-task-comments">Comments:</label>
+            <textarea clas4s="task-comments" rows="3" id="update-task-comments"></textarea><br><br>
+            <button id="update-task-button">Update Task</button>
+            <button id="cancel-update-task-button">Cancel</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="column-left">
+            <label for="project-name">Project Name:</label>
+            <span id="project-name"></span><br><br>
+            <label for="project-description">Project Description:</label>
+            <span id="project-description"></span><br><br>
+            <h2>Team Members:</h2>
+            <ul id="team-members-container"></ul>
+          </div>
+          <div class="column-right">
+            <h2>Tasks:</h2>
+            <table id="tasks-table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Priority</th>
+                  <th>Deadline</th>
+                  <th>Comments</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="tasks-container"></tbody>
+            </table>
+            <button id="add-task-button" type="button">Add Task</button>
+          </div>
+        </div>
+      </div>
+      
+    </main>
+    <div class="create-project-button center">
+      <a href="#create-project">Create Another New Project</a>
+    </div>
+    <script src="../js/project-display.js"></script>
+  </template>
+  <footer>
+    <p>&copy; 2023 Project Hub</p>
+  </footer>
+  <script src="../js/spa.js"></script>
+</body>
+
+</html>
